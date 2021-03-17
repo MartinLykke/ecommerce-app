@@ -50,15 +50,16 @@ function Navbar() {
                   <Person />
                 </h3>
               </div>
+              <span className="icon-text">Login</span>
             </a>
             <a className="icon-button" href="/cart">
               <div className="icon-container text-dark">
                 <h3>
                   <Cart2 />
                 </h3>
-                <span className="icon-price">799</span>
-                <span className="icon-number">1</span>
               </div>
+              <span className="icon-text">799,-</span>
+              <span className="icon-cart-amount">1</span>
             </a>
           </div>
         </ReactBootStrap.Container>
