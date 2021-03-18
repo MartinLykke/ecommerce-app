@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 0.6rem;
+
   padding: 1.6rem;
   position: relative;
 }
@@ -31,6 +31,7 @@
   cursor: pointer;
   text-decoration: none;
   position: relative;
+  margin-right: 0.6rem;
 }
 .icon-cart-amount {
   position: absolute;
@@ -53,9 +54,8 @@
 }
 .icon-text {
   color: #222;
-  font-weight: 300;
+  font-weight: bold;
   font-size: 12px;
   line-height: 24px;
   margin-top: 4px;
-  font-family: Roboto, Arial;
 }
