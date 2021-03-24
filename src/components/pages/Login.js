@@ -4,7 +4,7 @@ function Login() {
   return (
     <div class="container">
       <form>
-        <h3>Sign Up</h3>
+        <h3>Log in</h3>
 
         <div className="form-group">
           <label>First name</label>
