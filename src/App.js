@@ -7,19 +7,22 @@ import Signup from "./components/pages/Signup";
 import Navbar from "./components/navbar/Navbar";
 import Cart from "./components/pages/Cart";
 import Login from "./components/pages/Login";
+import { CartProvider } from "./context/CartContext";
 
 class App extends Component {
   render() {
     return (
       <>
         <Router>
-          <Navbar />
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/signup" exact component={Signup} />
-            <Route path="/cart" exact component={Cart} />
-            <Route path="/login" exact component={Login} />
-          </Switch>
+          <CartProvider>
+            <Navbar />
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/signup" exact component={Signup} />
+              <Route path="/cart" exact component={Cart} />
+              <Route path="/login" exact component={Login} />
+            </Switch>
+          </CartProvider>
         </Router>
       </>
     );

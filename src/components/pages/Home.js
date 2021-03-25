@@ -16,27 +16,31 @@ function Home() {
           <div class="col-sm"></div>
         </div>
         <ProductCatBtns />
-        <Wrapper className="page">
-          <div className="section-center products">
-            <div>
-              <Product />
+        <div className="">
+          <div className="container">
+            <div class="row text-center">
+              <div class="col-sm ">
+                {" "}
+                <Product />
+              </div>
+              <div class="col-sm">
+                {" "}
+                <Product />
+              </div>
+              <div class="col-sm">
+                {" "}
+                <Product />
+              </div>
+              <div class="col-sm">
+                {" "}
+                <Product />
+              </div>
             </div>
           </div>
-        </Wrapper>
+        </div>
       </div>
     </>
   );
 }
-const Wrapper = styled.div`
-  .products {
-    display: grid;
-    gap: 3rem 1.5rem;
-    margin: 4rem auto;
-  }
-  @media (min-width: 768px) {
-    .products {
-      grid-template-columns: 200px 1fr;
-    }
-  }
-`;
+
 export default Home;

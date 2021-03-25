@@ -18,10 +18,10 @@ class CarouselSlider extends React.PureComponent {
     };
   }
   _onSelect = (active, direction) => {
-    console.log(`active=${active} && direction=${direction}`);
+    // console.log(`active=${active} && direction=${direction}`);
   };
   _visiableOnSelect = (active) => {
-    console.log(`visiable onSelect active=${active}`);
+    //console.log(`visiable onSelect active=${active}`);
   };
   _slideNext = () => {
     this.slider.current.slideNext();
