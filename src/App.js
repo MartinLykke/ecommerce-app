@@ -8,6 +8,7 @@ import Navbar from "./components/navbar/Navbar";
 import Cart from "./components/pages/Cart";
 import Login from "./components/pages/Login";
 import { CartProvider } from "./context/CartContext";
+import Footer from "./components/Footer";
 
 class App extends Component {
   render() {
@@ -23,6 +24,7 @@ class App extends Component {
               <Route path="/login" exact component={Login} />
             </Switch>
           </CartProvider>
+          <Footer />
         </Router>
       </>
     );

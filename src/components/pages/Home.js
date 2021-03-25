@@ -13,6 +13,8 @@ function Home() {
     }
     if (window.innerWidth <= 600) {
       setCarouselWidth(200);
+    } else {
+      setCarouselWidth(400);
     }
   };
 
@@ -35,25 +37,45 @@ function Home() {
           <div class="col-sm"></div>
         </div>
         <ProductCatBtns />
-        <div className="">
-          <div className="container w-75 p-3">
-            <div class="row text-center">
-              <div class="col-sm ">
-                {" "}
-                <Product />
-              </div>
-              <div class="col-sm">
-                {" "}
-                <Product />
-              </div>
-              <div class="col-sm">
-                {" "}
-                <Product />
-              </div>
-              <div class="col-sm">
-                {" "}
-                <Product />
-              </div>
+        <h1 class="text-center">Most popular</h1>
+        <div className="container w-75 p-3">
+          <div class="row text-center">
+            <div class="col-sm ">
+              {" "}
+              <Product />
+            </div>
+            <div class="col-sm">
+              {" "}
+              <Product />
+            </div>
+            <div class="col-sm">
+              {" "}
+              <Product />
+            </div>
+            <div class="col-sm">
+              {" "}
+              <Product />
+            </div>
+          </div>
+        </div>
+        <h1 class="text-center">This week's offers</h1>
+        <div className="container w-75 p-3">
+          <div class="row text-center">
+            <div class="col-sm ">
+              {" "}
+              <Product />
+            </div>
+            <div class="col-sm">
+              {" "}
+              <Product />
+            </div>
+            <div class="col-sm">
+              {" "}
+              <Product />
+            </div>
+            <div class="col-sm">
+              {" "}
+              <Product />
             </div>
           </div>
         </div>
