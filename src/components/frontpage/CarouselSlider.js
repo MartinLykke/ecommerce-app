@@ -52,14 +52,14 @@ class CarouselSlider extends React.PureComponent {
               ref={this.slider}
               version={4}
             >
-              <div style={{ height: 400 }}>
+              <div style={{ height: this.props.carouselWidth }}>
                 <img style={{ width: "100%", height: "100%" }} src={sale} />
               </div>
 
-              <div style={{ height: 400 }}>
+              <div style={{ height: this.props.carouselWidth }}>
                 <img style={{ width: "100%", height: "100%" }} src={products} />
               </div>
-              <div style={{ height: 400 }}>
+              <div style={{ height: this.props.carouselWidth }}>
                 <img
                   style={{ width: "100%", height: "100%" }}
                   src={products2}
