@@ -8,7 +8,7 @@ import Navbar from "./components/navbar/Navbar";
 import Cart from "./components/pages/Cart";
 import Login from "./components/pages/Login";
 import { CartProvider } from "./context/CartContext";
-import Footer from "./components/Footer";
+import Footer from "./components/footer/Footer";
 
 class App extends Component {
   render() {
