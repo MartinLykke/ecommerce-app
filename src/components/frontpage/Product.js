@@ -2,15 +2,16 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import { StarFill } from "react-bootstrap-icons";
-function Product() {
-  const [, setCart] = useContext(CartContext);
+function Product(props) {
+  const [cart, setCart] = useContext(CartContext);
   function addToCart() {
     const productItem = {
       name: "props.text",
-      price: "props.price",
+      price: 4299,
       id: Math.random().toString(36).substr(2, 9),
     };
     setCart((currentState) => [...currentState, productItem]);
+    console.log(cart);
   }
   return (
     <>
@@ -29,7 +30,7 @@ function Product() {
       <p>Stock status</p>
       <p>Price,-</p>
       <button className="btn btn-light" onClick={addToCart}>
-        Buy
+        Add to cart
       </button>
     </>
   );

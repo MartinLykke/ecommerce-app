@@ -10,12 +10,11 @@
   padding: 1.6rem;
   position: relative;
 }
-.logo {
-  color: red;
-}
-@media screen and (max-width: 325px) {
+
+@media screen and (max-width: 355px) {
   .logo {
     position: inherit !important;
+    text-decoration: none;
   }
 }
 .navbar-menu {

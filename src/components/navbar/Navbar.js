@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import * as ReactBootStrap from "react-bootstrap";
 import { Cart2, Search, Person, Circle } from "react-bootstrap-icons";
 import "./Navbar.css";
+import { CartContext } from "../../context/CartContext";
+import { Link } from "react-router-dom";
 function Navbar() {
+  const [cart, setCart] = useContext(CartContext);
+
+  const currency = "kr.";
+  const totalPrice = cart.reduce((acc, curr) => acc + parseInt(curr.price), 0);
+
   return (
     <div>
       <ReactBootStrap.Navbar bg="light" expand="lg">
@@ -36,31 +43,38 @@ function Navbar() {
               </ReactBootStrap.NavDropdown>
             </ReactBootStrap.Nav>
           </ReactBootStrap.Navbar.Collapse>
-          <ReactBootStrap.Navbar.Brand
-            className="position-absolute top-25 start-50 logo"
-            href="/"
+          <Link
+            to="/"
+            className="position-absolute top-25 start-50 logo text-decoration-none"
           >
-            Logo
-          </ReactBootStrap.Navbar.Brand>
+            <ReactBootStrap.Navbar.Brand className="text-decoration-none">
+              Logo
+            </ReactBootStrap.Navbar.Brand>
+          </Link>
 
           <div className="navbar-menu ">
-            <a className="icon-button" href="/login">
+            <Link className="icon-button" to="/login">
               <div className="icon-container text-dark">
                 <h3>
                   <Person />
                 </h3>
               </div>
               <span className="icon-text">Login</span>
-            </a>
-            <a className="icon-button" href="/cart">
+            </Link>
+            <Link className="icon-button" to="/cart">
               <div className="icon-container text-dark">
                 <h3>
                   <Cart2 />
                 </h3>
               </div>
-              <span className="icon-text">799,-</span>
-              <span className="icon-cart-amount">1</span>
-            </a>
+
+              {cart != 0 && (
+                <>
+                  <span className="icon-text">{totalPrice},-</span>
+                  <span className="icon-cart-amount">{cart.length}</span>
+                </>
+              )}
+            </Link>
           </div>
         </ReactBootStrap.Container>
       </ReactBootStrap.Navbar>
