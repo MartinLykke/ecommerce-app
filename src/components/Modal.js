@@ -28,7 +28,7 @@ export default function Modal({ open, children, onClose }) {
 
   return ReactDom.createPortal(
     <>
-      <div style={OVERLAY_STYLES} />
+      <div style={OVERLAY_STYLES} onClick={onClose} />
       <div style={MODAL_STYLES}>
         <h1 className="d-flex justify-content-center">
           {" "}
