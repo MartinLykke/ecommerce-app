@@ -12,6 +12,10 @@ function Product(props) {
     };
     setCart((currentState) => [...currentState, productItem]);
     console.log(cart);
+    addToCartPopUp();
+  }
+  function addToCartPopUp() {
+    props.setPopupIsOpen(true);
   }
   return (
     <>

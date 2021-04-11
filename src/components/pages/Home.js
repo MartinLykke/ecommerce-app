@@ -3,9 +3,10 @@ import styled from "styled-components";
 import CarouselSlider from "../frontpage/CarouselSlider";
 import Product from "../frontpage/Product";
 import ProductCatBtns from "../frontpage/ProductCatBtns";
-
+import Modal from "../Modal";
 function Home() {
   const [carouselWidth, setCarouselWidth] = useState(400);
+  const [popupIsOpen, setPopupIsOpen] = useState(false);
 
   const resizeUI = () => {
     if (window.innerWidth <= 775) {
@@ -26,6 +27,7 @@ function Home() {
       window.removeEventListener("resize", resizeUI);
     };
   }, []);
+
   return (
     <>
       <div class="container shadow p-3 mb-5 bg-white rounded">
@@ -33,6 +35,9 @@ function Home() {
           <div class="col-sm"></div>
           <div class="col-10">
             <CarouselSlider carouselWidth={carouselWidth}></CarouselSlider>
+            <Modal open={popupIsOpen} onClose={() => setPopupIsOpen(false)}>
+              product name
+            </Modal>
           </div>
           <div class="col-sm"></div>
         </div>
@@ -42,19 +47,19 @@ function Home() {
           <div class="row text-center">
             <div class="col-sm ">
               {" "}
-              <Product />
+              <Product setPopupIsOpen={setPopupIsOpen} />
             </div>
             <div class="col-sm">
               {" "}
-              <Product />
+              <Product setPopupIsOpen={setPopupIsOpen} />
             </div>
             <div class="col-sm">
               {" "}
-              <Product />
+              <Product setPopupIsOpen={setPopupIsOpen} />
             </div>
             <div class="col-sm">
               {" "}
-              <Product />
+              <Product setPopupIsOpen={setPopupIsOpen} />
             </div>
           </div>
         </div>
@@ -63,19 +68,19 @@ function Home() {
           <div class="row text-center">
             <div class="col-sm ">
               {" "}
-              <Product />
+              <Product setPopupIsOpen={setPopupIsOpen} />
             </div>
             <div class="col-sm">
               {" "}
-              <Product />
+              <Product setPopupIsOpen={setPopupIsOpen} />
             </div>
             <div class="col-sm">
               {" "}
-              <Product />
+              <Product setPopupIsOpen={setPopupIsOpen} />
             </div>
             <div class="col-sm">
               {" "}
-              <Product />
+              <Product setPopupIsOpen={setPopupIsOpen} />
             </div>
           </div>
         </div>
