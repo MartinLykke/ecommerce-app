@@ -19,23 +19,29 @@ function Product(props) {
   }
   return (
     <>
-      <img
-        src="https://oasis.opstatics.com/content/dam/oasis/default/product-specs/8t-green.png"
-        alt="Product"
-        className="img-fluid"
-      />
-      <h5>Title</h5>
-      <p>Desc</p>
-      <p>
-        {" "}
-        <StarFill />
-        Rating
-      </p>
-      <p>Stock status</p>
-      <p>Price,-</p>
-      <button className="btn btn-light" onClick={addToCart}>
-        Add to cart
-      </button>
+      <div class="card">
+        <img
+          src="https://oasis.opstatics.com/content/dam/oasis/default/product-specs/8t-green.png"
+          alt="Product"
+          className="img-fluid card-img-top"
+        />
+
+        <div className="card-body">
+          <h5 className="card-title">Card title</h5>
+          <p className="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <button className="btn btn-primary" onClick={addToCart}>
+            Add to cart
+          </button>
+          <p>
+            <StarFill />
+          </p>
+          <p>Stock status</p>
+          <p>Price,-</p>
+        </div>
+      </div>
     </>
   );
 }

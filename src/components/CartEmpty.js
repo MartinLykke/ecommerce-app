@@ -4,17 +4,19 @@ import { Link } from "react-router-dom";
 
 function CartEmpty() {
   return (
-    <div className="mt-5 mb-5 ">
+    <div className="mt-5 mb-5 shadow-sm p-3 mb-5 bg-white rounded">
       <div className="d-flex justify-content-center p-1">
         <CartDash size={70} />
       </div>
       <h1 className="d-flex justify-content-center mt-3 mb-3">
         Your Cart is Empty
       </h1>
+
       <h6 className="d-flex justify-content-center mt-3 mb-3">
         Add something to fill your cart
       </h6>
-      <div className="text-center">
+
+      <div className="text-center pt-5 pb-3">
         <Link to="/" className="w-50 btn btn-primary ">
           Continue shopping
         </Link>

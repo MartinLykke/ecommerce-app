@@ -43,7 +43,7 @@ function Home() {
         </div>
         <ProductCatBtns />
         <h1 class="text-center p-4">Most popular</h1>
-        <div className="container w-75 p-3">
+        <div className="container">
           <div class="row text-center">
             <div class="col-sm ">
               {" "}
@@ -64,7 +64,7 @@ function Home() {
           </div>
         </div>
         <h1 class="text-center p-4">This week's offers</h1>
-        <div className="container w-75 p-3">
+        <div className="container">
           <div class="row text-center">
             <div class="col-sm ">
               {" "}

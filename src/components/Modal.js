@@ -50,7 +50,7 @@ export default function Modal({ open, children, onClose }) {
             Continue shopping
           </button>
           <Link to="/cart">
-            <button className="btn btn-secondary p-3">Checkout</button>
+            <button className="btn btn-primary p-3">Checkout</button>
           </Link>
         </div>
         <br /> <br />
