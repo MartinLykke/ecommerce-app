@@ -29,8 +29,8 @@ export default function Modal({ open, children, onClose }) {
   return ReactDom.createPortal(
     <>
       <div style={OVERLAY_STYLES} onClick={onClose} />
-      <div style={MODAL_STYLES}>
-        <h1 className="d-flex justify-content-center">
+      <div style={MODAL_STYLES} className="shadow-lg rounded">
+        <h1 className="d-flex justify-content-center ">
           {" "}
           <BagCheckFill className="text-success" />
         </h1>
@@ -46,11 +46,11 @@ export default function Modal({ open, children, onClose }) {
         </div>
         <hr />
         <div className="d-flex justify-content-between">
-          <button onClick={onClose} className="btn btn-light">
+          <button onClick={onClose} className="btn shadow-sm p-3 bg-body">
             Continue shopping
           </button>
           <Link to="/cart">
-            <button className="btn btn-secondary">Checkout</button>
+            <button className="btn btn-secondary p-3">Checkout</button>
           </Link>
         </div>
         <br /> <br />
