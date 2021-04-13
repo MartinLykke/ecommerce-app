@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BagCheckFill } from "react-bootstrap-icons";
 import ReactDom from "react-dom";
 import { Link } from "react-router-dom";
 import "./Modal.css";
+import { CartContext } from "../context/CartContext";
 const MODAL_STYLES = {
   position: "fixed",
   top: "50%",
@@ -24,26 +25,31 @@ const OVERLAY_STYLES = {
 };
 
 export default function Modal({ open, children, onClose }) {
+  const [cart, setCart] = useContext(CartContext);
+
   if (!open) return null;
 
   return ReactDom.createPortal(
     <>
       <div style={OVERLAY_STYLES} onClick={onClose} />
-      <div style={MODAL_STYLES} className="shadow-lg rounded mobilewidth">
+      <div style={MODAL_STYLES} className="shadow-lg rounded responsiveWidth">
         <h1 className="d-flex justify-content-center ">
           {" "}
           <BagCheckFill className="text-success" />
         </h1>
         <p className="d-flex justify-content-center">Item was put in cart</p>
-        <div className="d-flex justify-content-around">
-          <img
-            src="https://oasis.opstatics.com/content/dam/oasis/default/product-specs/8t-green.png"
-            alt="Product"
-            className="w-25"
-          />
-          <p className="d-flex align-items-center"> {children}</p>
-          <p className="d-flex align-items-center">product price,-</p>
-        </div>
+        {cart !== 0 &&
+          cart.map((doc) => (
+            <ul className="list-group list-group-flush">
+              <li className="list-group-item ">
+                <div className="d-flex justify-content-around">
+                  <img src={doc.img} alt={doc.name} className="w-25" />
+                  <p className="d-flex align-items-center"> {doc.name}</p>
+                  <p className="d-flex align-items-center">{doc.price}</p>
+                </div>
+              </li>
+            </ul>
+          ))}
         <hr />
         <div className="d-flex justify-content-between">
           <button onClick={onClose} className="btn shadow-sm p-3 bg-body">

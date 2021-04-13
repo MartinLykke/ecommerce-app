@@ -28,20 +28,15 @@ function Cart() {
       )}
       {cart !== 0 &&
         cart.map((doc) => (
-          <li className="cartItem__details">
-            <p>
-              {doc.name}{" "}
-              <span
-                onClick={() => removeFromOrder(doc.id)}
-                className="deleteItemBtn"
-              >
-                <i class="fas fa-trash fa-2x"></i>
-              </span>{" "}
-              <p>{doc.price}kr. </p>
-            </p>
-
-            <span className="removeButton"></span>
-          </li>
+          <ul className="list-group list-group-flush">
+            <li className="list-group-item ">
+              <div className="d-flex justify-content-around">
+                <img src={doc.img} alt={doc.name} className="w-25" />
+                <p className="d-flex align-items-center"> {doc.name}</p>
+                <p className="d-flex align-items-center">{doc.price}</p>
+              </div>
+            </li>
+          </ul>
         ))}
     </div>
   );
