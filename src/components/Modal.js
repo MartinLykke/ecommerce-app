@@ -2,7 +2,7 @@ import React from "react";
 import { BagCheckFill } from "react-bootstrap-icons";
 import ReactDom from "react-dom";
 import { Link } from "react-router-dom";
-
+import "./Modal.css";
 const MODAL_STYLES = {
   position: "fixed",
   top: "50%",
@@ -29,7 +29,7 @@ export default function Modal({ open, children, onClose }) {
   return ReactDom.createPortal(
     <>
       <div style={OVERLAY_STYLES} onClick={onClose} />
-      <div style={MODAL_STYLES} className="shadow-lg rounded">
+      <div style={MODAL_STYLES} className="shadow-lg rounded mobilewidth">
         <h1 className="d-flex justify-content-center ">
           {" "}
           <BagCheckFill className="text-success" />
