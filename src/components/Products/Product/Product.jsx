@@ -31,18 +31,18 @@ const Product = ({ product, onAddToCart, setPopupIsOpen }) => {
   return (
     <div className="card">
       <img className="img-fluid card-img-top" src={product.media.source} title={product.name} />
-      <div className="card-body">
-        <div className={classes.cardContent}>
+      <div className="card-body d-flex flex-column">
+        <div >
           <h5 className="card-title">
             {product.name}
           </h5>
-          <h5 gutterBottom variant="h5" component="h2">
+          <h5 >
             £{product.price.formatted}
           </h5>
         </div>
         <Typography dangerouslySetInnerHTML={{ __html: product.description }} variant="body2" color="textSecondary" component="p" />
       </div>
-            <button className="btn btn-primary" onClick={addToCart}>
+            <button className="btn btn-primary mt-auto" onClick={addToCart}>
             Add to cart
           </button>
     </div>
