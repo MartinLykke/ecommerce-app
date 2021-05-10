@@ -2,7 +2,6 @@ import { ControlCameraSharp } from "@material-ui/icons";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import CarouselSlider from "../frontpage/CarouselSlider";
-import Product from "../frontpage/Product";
 import ProductCatBtns from "../frontpage/ProductCatBtns";
 import Modal from "../Modal";
 import Products from "../Products/Products";
@@ -68,38 +67,6 @@ function Home(products) {
           setPopupIsOpen={setPopupIsOpen}
           showProductDesc={showProductDesc}
         ></Products>
-        <div className="container">
-          <div class="row text-center">
-            <div class="col-sm ">
-              {" "}
-              <Product
-                setPopupIsOpen={setPopupIsOpen}
-                showProductDesc={showProductDesc}
-              />
-            </div>
-            <div class="col-sm">
-              {" "}
-              <Product
-                setPopupIsOpen={setPopupIsOpen}
-                showProductDesc={showProductDesc}
-              />
-            </div>
-            <div class="col-sm">
-              {" "}
-              <Product
-                setPopupIsOpen={setPopupIsOpen}
-                showProductDesc={showProductDesc}
-              />
-            </div>
-            <div class="col-sm">
-              {" "}
-              <Product
-                setPopupIsOpen={setPopupIsOpen}
-                showProductDesc={showProductDesc}
-              />
-            </div>
-          </div>
-        </div>
       </div>
     </>
   );

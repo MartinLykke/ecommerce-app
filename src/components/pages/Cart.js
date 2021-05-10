@@ -4,6 +4,7 @@ import { CartContext } from "../../context/CartContext";
 import { useHistory } from "react-router-dom";
 import { Cart3, CartX } from "react-bootstrap-icons";
 import CartEmpty from "../CartEmpty";
+import { RemoveShoppingCart } from "@material-ui/icons";
 
 function Cart() {
   const [cart, setCart] = useContext(CartContext);
@@ -27,7 +28,7 @@ function Cart() {
         </div>
       )}
       <div className="row">
-        {cart !== 0 &&
+        {cart.length != 0 &&
           cart.map((doc) => (
             <ul className="list-group list-group-flush border-top col-6 col-sm-12">
               <li className="list-group-item ">
@@ -48,9 +49,13 @@ function Cart() {
             </ul>
           ))}
       </div>
-      <button onClick={clearCart} className="clear-btn mb-5">
-        Empty the cart
-      </button>
+      {cart.length != 0 && (
+        <button onClick={clearCart} className="clear-btn mb-5">
+          <p>
+            <RemoveShoppingCart /> Empty cart
+          </p>
+        </button>
+      )}
     </div>
   );
 }

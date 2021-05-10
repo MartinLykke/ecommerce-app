@@ -1,14 +1,12 @@
 
 import React, { useContext } from "react";
-import { Typography } from '@material-ui/core';
+import { Card, CardMedia, CardContent, CardActions, Typography, IconButton } from '@material-ui/core';
 import { AddShoppingCart } from '@material-ui/icons';
-
 import useStyles from './styles';
 import { CartContext } from "../../../context/CartContext";
 
-
-
 const Product = ({ product, onAddToCart, setPopupIsOpen }) => {
+     const classes = useStyles();
     const [cart, setCart] = useContext(CartContext);
       function addToCart() {
     const productItem = {
@@ -18,34 +16,33 @@ const Product = ({ product, onAddToCart, setPopupIsOpen }) => {
       id: Math.random().toString(36).substr(2, 9),
     };
     setCart((currentState) => [...currentState, productItem]);
-    console.log(cart);
     addToCartPopUp();
   }
    function addToCartPopUp() {
     setPopupIsOpen(true);
   }
-  const classes = useStyles();
-
-  const handleAddToCart = () => onAddToCart(product.id, 1);
 
   return (
-    <div className="card">
-      <img className="img-fluid card-img-top" src={product.media.source} title={product.name} />
-      <div className="card-body d-flex flex-column">
-        <div >
-          <h5 className="card-title">
+    <>
+    <Card className={classes.root}>
+ <CardMedia className={classes.media} image={product.media.source} title={product.name} /> <CardContent>
+        <div className={classes.cardContent}>
+          <Typography gutterBottom variant="h5" component="h2">
             {product.name}
-          </h5>
-          <h5 >
-            £{product.price.formatted}
-          </h5>
+          </Typography>
+          <Typography gutterBottom variant="h5" component="h2">
+            ${product.price.formatted}
+          </Typography>
         </div>
         <Typography dangerouslySetInnerHTML={{ __html: product.description }} variant="body2" color="textSecondary" component="p" />
-      </div>
-            <button className="btn btn-primary mt-auto" onClick={addToCart}>
-            Add to cart
-          </button>
-    </div>
+      </CardContent>
+      <CardActions disableSpacing className={classes.cardActions}>
+        <IconButton aria-label="Add to Cart" onClick={addToCart}>
+          <AddShoppingCart />
+        </IconButton>
+      </CardActions>
+    </Card>
+    </>
   );
 };
 
